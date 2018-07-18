@@ -1,0 +1,71 @@
+[System]
+Name='ex2'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=25
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='e'
+Range=[-10 10]
+NumMFs=5
+MF1='nm':'trapmf',[-20 -15 -10 -5]
+MF2='ns':'trimf',[-10 -5 0]
+MF3='z':'trimf',[-5 0 5]
+MF4='ps':'trimf',[0 5 10]
+MF5='pm':'trapmf',[5 10 15 20]
+
+[Input2]
+Name='delta_e'
+Range=[-3 3]
+NumMFs=5
+MF1='nm':'trapmf',[-6 -4.5 -3 -1.5]
+MF2='ns':'trimf',[-3 -1.5 0]
+MF3='z':'trimf',[-1.5 0 1.5]
+MF4='ps':'trimf',[0 1.5 3]
+MF5='pm':'trapmf',[1.5 3 4.5 6]
+
+[Output1]
+Name='u'
+Range=[-1000 1000]
+NumMFs=7
+MF1='nl':'trimf',[-1000 -1000 -667.3]
+MF2='nm':'trimf',[-1000 -667.3 -333.2]
+MF3='ns':'trimf',[-667.3 -333.2 0]
+MF4='z':'trimf',[-333.2 0 333]
+MF5='ps':'trimf',[0 333 666.3]
+MF6='pm':'trimf',[333 666.3 1000]
+MF7='pl':'trimf',[666.3 1000 1000]
+
+[Rules]
+1 1, 7 (1) : 1
+1 2, 7 (1) : 1
+1 3, 6 (1) : 1
+1 4, 5 (1) : 1
+1 5, 4 (1) : 1
+2 1, 7 (1) : 1
+2 2, 6 (1) : 1
+2 3, 5 (1) : 1
+2 4, 4 (1) : 1
+2 5, 3 (1) : 1
+3 1, 6 (1) : 1
+3 2, 5 (1) : 1
+3 3, 4 (1) : 1
+3 4, 3 (1) : 1
+3 5, 2 (1) : 1
+4 1, 5 (1) : 1
+4 2, 4 (1) : 1
+4 3, 3 (1) : 1
+4 4, 2 (1) : 1
+4 5, 1 (1) : 1
+5 1, 4 (1) : 1
+5 2, 3 (1) : 1
+5 3, 2 (1) : 1
+5 4, 1 (1) : 1
+5 5, 1 (1) : 1
